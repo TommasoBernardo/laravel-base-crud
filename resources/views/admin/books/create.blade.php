@@ -5,6 +5,7 @@
         @include('admin.books.partials.editCreate', [
             'method' => 'POST',
             'route' => 'admin.books.store',
+            'book' => $book,
         ])
     </div>
 @endsection
