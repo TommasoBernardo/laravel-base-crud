@@ -24,6 +24,9 @@
             <p class="card-text mb-4">
                 {{ $book->publication_date }}
             </p>
+            <a href="{{ route('admin.books.index', $book->id) }}" class="btn btn-primary">
+                Index
+            </a>            
             <a href="{{ route('admin.books.edit', $book->id) }}" class="btn btn-success">
                 Edit
             </a>
