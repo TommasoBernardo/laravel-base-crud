@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Illuminate\Validation\Rule;
 
 class BookController extends Controller
 {
@@ -89,12 +90,18 @@ class BookController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Book $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $book)
     {
-        //
+        $newCondition = $this->validationCondition;
+        //riconfermo le regole precedenti e aggiungo 'esclusione della unique
+        $newCondition['isbn'] = ['required', 'max:13', Rule::unique('books')->ignore($book->id)];
+        $data = $request->validate($newCondition, $this->messagesOfErrors);
+        $book->update($data);
+        return redirect()->route('admin.books
+        .show', $book->id);
     }
 
     /**
