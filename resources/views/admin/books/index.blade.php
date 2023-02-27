@@ -21,16 +21,15 @@
             <tbody class="table-group-divider">
                 @foreach ($books as $book)
                     <tr>
-                        <td>{{ $books->id }}</td>
-                        <td>{{ $books->title }}</td>
-                        <td>{{ $books->author }}</td>
-                        <td>{{ $books->date }}</td>
+                        <td>{{ $book->id }}</td>
+                        <td>{{ $book->title }}</td>
+                        <td>{{ $book->author }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('admin.books.show', $books->id) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('admin.books.show', $book->id) }}">Show</a>
 
-                            <a class="btn btn-success" href="{{ route('admin.books.edit', $books->id) }}">Edit</a>
+                            <a class="btn btn-success" href="{{ route('admin.books.edit', $book->id) }}">Edit</a>
 
-                            <form action="{{ route('admin.books.destroy', $books->id) }}" method="POST"
+                            <form action="{{ route('admin.books.destroy', $book->id) }}" method="POST"
                                 class="d-inline-block form-deleter">
                                 @csrf
                                 @method('DELETE')
@@ -41,6 +40,5 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $books->links() }}
     </div>
 @endsection
