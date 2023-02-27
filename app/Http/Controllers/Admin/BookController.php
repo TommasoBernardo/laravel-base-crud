@@ -45,7 +45,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.books.create', ["book" => new Book()]);
     }
 
     /**
