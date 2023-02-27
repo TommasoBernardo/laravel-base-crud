@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     protected $validationCondition = [
         'isbn' => 'required|number|max:13|unique:books,isbn',
-        'title' => 'required|min:2|max:100|unique:books,title',
+        'title' => 'required|min:2|max:100',
         'author' => 'required|min:2|string',
         'publication_date' => 'required|date',
         'description' => 'required|string|min:6',
