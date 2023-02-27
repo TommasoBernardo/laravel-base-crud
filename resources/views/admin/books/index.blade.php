@@ -1,7 +1,4 @@
 @extends('layouts.app ')
-@section('head')
-    @vite(['resources/js/delete.js'])
-@endsection
 @section('content')
     <div class="container">
         @if (session('message'))
