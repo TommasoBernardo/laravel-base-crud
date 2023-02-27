@@ -100,8 +100,7 @@ class BookController extends Controller
         $newCondition['isbn'] = ['required', 'max:13', Rule::unique('books')->ignore($book->id)];
         $data = $request->validate($newCondition, $this->messagesOfErrors);
         $book->update($data);
-        return redirect()->route('admin.books
-        .show', $book->id);
+        return redirect()->route('admin.books.show', $book->id);
     }
 
     /**
