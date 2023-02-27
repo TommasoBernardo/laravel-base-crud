@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('isbn', 13);
             $table->string('title', 50);
-            $table->string('author', 25);
+            $table->string('author');
             $table->date('publication_date');
             $table->text('description');
             $table->string('genre');
