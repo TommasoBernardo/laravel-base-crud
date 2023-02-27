@@ -72,7 +72,8 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('admin.books.show', compact('book'));
     }
 
     /**
@@ -85,7 +86,6 @@ class BookController extends Controller
     {
         return view('admin.books.edit', compact('book'));
     }
-
     /**
      * Update the specified resource in storage.
      *
