@@ -14,7 +14,7 @@
                     <th scope="col">Author</th>
                     <th scope="col">date</th>
                     <th scope="col">
-                        <a class="btn btn-primary">create a new project</a>
+                        <a class="btn btn-primary">create a new book</a>
                     </th>
                 </tr>
             </thead>
@@ -24,6 +24,7 @@
                         <td>{{ $book->id }}</td>
                         <td>{{ $book->title }}</td>
                         <td>{{ $book->author }}</td>
+                        <td>{{ $book->publication_date }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('admin.books.show', $book->id) }}">Show</a>
 
