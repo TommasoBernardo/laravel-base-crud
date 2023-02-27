@@ -19,13 +19,17 @@ class BookController extends Controller
     ];
 
     protected $messagesOfErrors = [
+        'isbn.required' => 'L\'isbn è obblogatorio',
+        'isbn.max' => 'L\'isbn deve essere di 13 caratteri',
         'title.required' => 'Il titolo è obblogatorio',
         'title.min' => 'Il titolo deve contere almeno 2 caratteri',
+        'author.required' => 'l\'autore è necessario',
+        'publication_date.required' => 'la data di pubblicazione è necessaria',
         'description.required' => 'La descrizione è necessaria',
         'description.min' => 'La descrizione deve contenere minimo 6 caratteri',
-        'thumb.required' => 'L\'url della immagine è fondamentale',
-        'author.required' => 'l\'autore è necessario',
-        'used_technology.required' => 'la tecnologia utilizzata nel progetto è necessaria',
+        'genre.required' => 'il genere del libro è necessario',
+        'genre.min' => 'il genere del libro è almeno di 2 caratteri',
+        'cover_image.required' => 'L\'url della immagine è fondamentale',
     ];
     /**
      * Display a listing of the resource.
