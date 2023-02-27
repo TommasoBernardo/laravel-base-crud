@@ -26,11 +26,11 @@
                         <td>{{ $books->author }}</td>
                         <td>{{ $books->date }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('admin.posts.show', $books->id) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('admin.books.show', $books->id) }}">Show</a>
 
-                            <a class="btn btn-success" href="{{ route('admin.posts.edit', $books->id) }}">Edit</a>
+                            <a class="btn btn-success" href="{{ route('admin.books.edit', $books->id) }}">Edit</a>
 
-                            <form action="{{ route('admin.posts.destroy', $books->id) }}" method="POST"
+                            <form action="{{ route('admin.books.destroy', $books->id) }}" method="POST"
                                 class="d-inline-block form-deleter">
                                 @csrf
                                 @method('DELETE')
