@@ -8,6 +8,25 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
+    protected $validationCondition = [
+        'isbn' => 'required|number|max:13|unique:books,isbn',
+        'title' => 'required|min:2|max:100|unique:books,title',
+        'author' => 'required|min:2|string',
+        'publication_date' => 'required|date',
+        'description' => 'required|string|min:6',
+        'genre' => 'required|string|min:2',
+        'cover_image' => 'required|url',
+    ];
+
+    protected $messagesOfErrors = [
+        'title.required' => 'Il titolo è obblogatorio',
+        'title.min' => 'Il titolo deve contere almeno 2 caratteri',
+        'description.required' => 'La descrizione è necessaria',
+        'description.min' => 'La descrizione deve contenere minimo 6 caratteri',
+        'thumb.required' => 'L\'url della immagine è fondamentale',
+        'author.required' => 'l\'autore è necessario',
+        'used_technology.required' => 'la tecnologia utilizzata nel progetto è necessaria',
+    ];
     /**
      * Display a listing of the resource.
      *
