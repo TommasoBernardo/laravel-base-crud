@@ -14,7 +14,7 @@
                     <th scope="col">Author</th>
                     <th scope="col">date</th>
                     <th scope="col">
-                        <a class="btn btn-primary">create a new book</a>
+                        <a href="{{ route('admin.books.create') }}" class="btn btn-primary">create a new book</a>
                     </th>
                 </tr>
             </thead>
