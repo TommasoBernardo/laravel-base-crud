@@ -39,7 +39,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::orderBy('publication_date', 'DESC')->paginate(10);
         return view('admin.books.index', compact('books'));
     }
 
