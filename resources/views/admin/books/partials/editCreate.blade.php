@@ -12,6 +12,12 @@
     </div>
     @endif
     <div class="mb-3">
+        <label for="isbn" class="form-label">
+            ISBN
+        </label>
+        <input type="number" name="isbn" value="{{old('title', $book->isbn)}}" class="form-control">
+    </div>
+    <div class="mb-3">
         <label for="title" class="form-label">
             Titolo del Libro 
         </label>
@@ -27,7 +33,7 @@
         <label for="publication_date" class="form-label">
             Data di Pubblicazione
         </label>
-        <input type="file" name="publication_date" value="{{old('publication_date', $book->publication_date)}}"  class="form-control">
+        <input type="date" name="publication_date" value="{{old('publication_date', $book->publication_date)}}"  class="form-control">
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">
