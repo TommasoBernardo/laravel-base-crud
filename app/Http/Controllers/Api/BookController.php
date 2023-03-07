@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index(){
-        $books = Book::paginate(25);
+    public function index()
+    {
+        $books = Book::paginate(26);
         return response()->json([
             'success' => true,
             'results' => $books
